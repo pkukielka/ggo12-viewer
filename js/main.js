@@ -18,6 +18,6 @@ $.getJSON("data/forks.json", function(_forks) {
 			});
 		}
 	}
-	console.log(forks)
+	$('#counter').html('(' + forks.length + ' entries)')
 	forksList = new List('forks-list', options, forks);
 });
