@@ -6,13 +6,9 @@ var options = {
 };
 
 $.getJSON("data/forks.json", function(_forks) {
-	var i, length, _results;
-	aa = _forks
-	urls = []
-	urlsStr = ""
+	var i, length, _results, urlsStr = ""
 	for ( i = 0, length = _forks.length; i < length; i += 1) {
 		if (_forks[i].homepage !== "https://github.com/blog/1303-github-game-off") {
-			urls.push(_forks[i].html_url)
 			urlsStr += ',"' + _forks[i].html_url + '"'
 		}
 	}
@@ -20,16 +16,10 @@ $.getJSON("data/forks.json", function(_forks) {
 		format : "json",
 		query : "select total_count, url from link_stat where url in (" + urlsStr.replace(",", "") + ")"
 	}, function(data) {
-		votes = {}
+		votes = {};
 		for (var i = 0; i < data.length; i++) {
 			votes[data[i].url] = data[i].total_count;
 		}
-		_forks.sort(function(a, b) {
-			votes[a.html_url] = votes[a.html_url] || 0;
-			votes[b.html_url] = votes[b.html_url] || 0;
-			return votes[a.html_url] > votes[b.html_url];
-		})
-		_forks.reverse()
 		forks = [];
 		for ( i = 0, length = _forks.length; i < length; i += 1) {
 			if (_forks[i].homepage !== "https://github.com/blog/1303-github-game-off") {
@@ -43,7 +33,8 @@ $.getJSON("data/forks.json", function(_forks) {
 					name : _forks[i].name,
 					login : _forks[i].owner.login,
 					created_at : _forks[i].created_at,
-					pushed_at : _forks[i].pushed_at
+					pushed_at : _forks[i].pushed_at,
+					likes : (votes[_forks[i].html_url] || 0) + ''
 				});
 			}
 		}

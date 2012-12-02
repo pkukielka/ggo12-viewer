@@ -30,6 +30,7 @@
                 <span class="sort btn" data-sort="login">Sort by user</span>
                 <span class="sort btn" data-sort="created_at">Sort by creation date</span>
                 <span class="sort btn" data-sort="pushed_at">Sort by last push date</span>
+                <span class="sort btn" data-sort="likes">Sort by likes</span>
                 <br><br><hr>
                 <ul class="list"></ul>
             </div>
@@ -48,6 +49,7 @@
                 <p class="login" style="display:none;"></p>
                 <p class="created_at" style="display:none;"></p>
                 <p class="pushed_at" style="display:none;"></p>
+                <p class="likes" style="display:none;"></p>
             </li>
         </div>
 		<img id="loadinggif" src="ajax-loader.gif">
@@ -59,7 +61,7 @@
         <script src="js/main.js"></script>
         <script>
   window.fbAsyncInit = function() {
-    // init the FB JS SDK
+    // Init the FB JS SDK
     FB.init({
       appId      : '269191293202688', // App ID from the App Dashboard
       status     : true, // check the login status upon init?
@@ -68,7 +70,6 @@
     });
 
     // Additional initialization code such as adding Event Listeners goes here
-
   };
 
   // Load the SDK's source Asynchronously
