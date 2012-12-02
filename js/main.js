@@ -32,11 +32,16 @@ $.getJSON("data/forks.json", function(_forks) {
 		for ( i = 0, length = _forks.length; i < length; i += 1) {
 			if (_forks[i].homepage !== "https://github.com/blog/1303-github-game-off") {
 				forks.push({
-					votes : '<div>Likes: ' + votes[_forks[i].html_url] + ' - <a class="like-tmp" href=' + _forks[i].html_url + '>like</a></div>', //'<div class="fb-like" data-href="'+_forks[i].html_url+'" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>',
 					full_name : '<a href="' + _forks[i].html_url + '">' + _forks[i].full_name + '</a>',
 					avatar_url : '<img src="' + _forks[i].owner.avatar_url + '" height="80" width="80"/>',
 					homepage : '<a href="' + _forks[i].homepage + '">' + _forks[i].homepage + '</a>',
-					description : _forks[i].description
+					description : _forks[i].description,
+					votes : '<div>Likes: ' + votes[_forks[i].html_url] + ' - <a class="like-tmp" href=' + _forks[i].html_url + '>like</a></div>', //'<div class="fb-like" data-href="'+_forks[i].html_url+'" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>',
+
+					name : _forks[i].name,
+					login : _forks[i].owner.login,
+					created_at : _forks[i].created_at,
+					pushed_at : _forks[i].pushed_at
 				});
 			}
 		}
