@@ -25,7 +25,9 @@ $.getJSON("data/forks.json", function(_forks) {
 			votes[data[i].url] = data[i].total_count;
 		}
 		_forks.sort(function(a, b) {
-			return votes[a.html_url] > votes[b.html_url]
+			votes[a.html_url] = votes[a.html_url] || 0;
+			votes[b.html_url] = votes[b.html_url] || 0;
+			return votes[a.html_url] > votes[b.html_url];
 		})
 		_forks.reverse()
 		forks = [];
