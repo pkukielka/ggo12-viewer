@@ -24,9 +24,9 @@ $.getJSON("data/forks.json", function(_forks) {
 		for ( i = 0, length = _forks.length; i < length; i += 1) {
 			if (_forks[i].homepage !== "https://github.com/blog/1303-github-game-off") {
 				forks.push({
-					full_name : '<a href="' + _forks[i].html_url + '">' + _forks[i].full_name + '</a>',
+					full_name : '<a href="' + _forks[i].html_url + '" target="_blank">' + _forks[i].full_name + '</a>',
 					avatar_url : '<img src="' + _forks[i].owner.avatar_url + '" height="80" width="80"/>',
-					homepage : '<a href="' + _forks[i].homepage + '">' + _forks[i].homepage + '</a>',
+					homepage : '<a href="' + _forks[i].homepage + '" target="_blank">' + _forks[i].homepage + '</a>',
 					description : _forks[i].description,
 					votes : '<div>Likes: ' + votes[_forks[i].html_url] + ' - <a class="like-tmp" href=' + _forks[i].html_url + '>like</a></div>', //'<div class="fb-like" data-href="'+_forks[i].html_url+'" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>',
 
