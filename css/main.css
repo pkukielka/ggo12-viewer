@@ -37,7 +37,17 @@ hr {
 img {
     vertical-align: middle;
 }
-
+.full_name{
+	float:left;
+	margin-top: 40px;
+}
+.avatar_url{
+	float: left;
+	margin-left:20px;
+}
+.homepage{
+	clear: both;
+}
 fieldset {
     border: 0;
     margin: 0;
