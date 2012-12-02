@@ -23,8 +23,13 @@
         <h3 id="counter" align="center"></h3>
         <div id="lovely-things-list">
             <div id="forks-list">
-                <input size="50" class="search" /><br><br>
-                <hr>
+                <input size="50" class="search" />
+
+                <span class="sort btn" data-sort="name">Sort by name</span>
+                <span class="sort btn" data-sort="login">Sort by user</span>
+                <span class="sort btn" data-sort="created_at">Sort by creation date</span>
+                <span class="sort btn" data-sort="pushed_at">Sort by last push date</span>
+                <br><br><hr>
                 <ul class="list"></ul>
             </div>
         </div>
@@ -36,6 +41,11 @@
                 <p class="avatar_url"></p>
                 <p class="homepage"></p>
                 <p class="description"></p>
+
+                <p class="name" style="display:none;"></p>
+                <p class="login" style="display:none;"></p>
+                <p class="created_at" style="display:none;"></p>
+                <p class="pushed_at" style="display:none;"></p>
             </li>
         </div>
 

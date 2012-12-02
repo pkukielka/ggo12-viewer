@@ -14,7 +14,12 @@ $.getJSON("data/forks.json", function(_forks) {
 				full_name: '<a href="' + _forks[i].html_url + '">' + _forks[i].full_name + '</a>',
 				avatar_url: '<img src="' +  _forks[i].owner.avatar_url + '" height="80" width="80"/>',
 				homepage: '<a href="' + _forks[i].homepage + '">' + _forks[i].homepage + '</a>',
-				description: _forks[i].description
+				description: _forks[i].description, 
+
+				name: _forks[i].name,
+				login: _forks[i].owner.login,
+				created_at: _forks[i].created_at,
+				pushed_at: _forks[i].pushed_at
 			});
 		}
 	}
