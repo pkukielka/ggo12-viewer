@@ -24,7 +24,7 @@ $.getJSON("data/forks.json", function(_forks) {
 		for ( i = 0, length = _forks.length; i < length; i += 1) {
 			if (_forks[i].homepage !== "https://github.com/blog/1303-github-game-off") {
 				forks.push({
-					full_name : '<a href="' + _forks[i].html_url + '" target="_blank">' + _forks[i].full_name + '</a>',
+					full_name : '<a id="' + _forks[i].owner.login + '" href="' + _forks[i].html_url + '" target="_blank">' + _forks[i].full_name + '</a>',
 					avatar_url : '<img src="' + _forks[i].owner.avatar_url + '" height="80" width="80"/>',
 					homepage : '<a href="' + _forks[i].homepage + '" target="_blank">' + _forks[i].homepage + '</a>',
 					description : _forks[i].description,
@@ -47,6 +47,7 @@ $.getJSON("data/forks.json", function(_forks) {
 				addLike(this);
 			}
 		})
+		window.location = window.location;
 	});
 
 });
