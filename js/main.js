@@ -47,7 +47,11 @@ $.getJSON("data/forks.json", function(_forks) {
 				addLike(this);
 			}
 		})
-		window.location = window.location;
+		
+		if (window.location.hash && 0 !== window.location.hash.length) {
+			window.location = window.location;
+		}
+
 	});
 
 });
